@@ -1,0 +1,191 @@
+# This file *must* be named "input_for_mobility.txt"
+#lines beginning with '#' are comment lines
+#to retain the # for some reason use '\#', e.g. "filename_with_a\#.dat"
+#The GaAs-AlGaAs heterointerface is at z=0 (for heterostructure)
+#The QW is between (z=0,z=L); the impurity profiles should be set accordingly 
+#The surface will have negative co-ordinates
+
+\begin{OutputSpecifications}  # This section must exist
+#outputunits=SI
+outputunits=cm2byVs
+outputfile=OUTPUT_30nm_HET_[v627]weighted.dat
+#outputfile=OUTPUT_compare_HET_QW.dat
+\end{OutputSpecifications}
+
+
+\begin{DeviceType}           # This section must exist : comment out what is not applicable
+#devicetype=QUANTUM_WELL
+devicetype=HETEROSTRUCTURE
+#quantum_well_width_in_nanometer=20.00  # irrelevant for heterostructures
+distance_of_interface_from_surface_in_nanometer =-30.00 
+\end{DeviceType}
+
+
+\begin{CarrierDensity}
+# must be in SI units ( /m^2)
+1.2e14,2.0e14,3.0e14,4e14,5e14, 6e14, 7e14, 8e14, 9e14,1.0e15, 1.1e15,1.2e15, 1.3e15,
+1.4e15,1.5e15,1.6e15,1.75e15,1.9e15,2.0e15,2.1e15,2.2e15,2.3e15,2.4e15
+2.75e15,3.0e15,4e15, 5e15,6e15,7e15,8e15
+\end{CarrierDensity}
+
+
+\begin{SurfaceCharge}          # This section is optional 
+surface_charge_density = 2.8e15
+\end{SurfaceCharge}
+
+
+\begin{ImpurityProfile}        # This section is optional 
+#units : distances in nanometers & background in per mt^3
+-30.0  -0.1  2.33e20 
+-0.1   400.00 8e19   
+\end{ImpurityProfile}
+
+
+#\begin{DeltaDoping}            # This section is optional 
+#units : distances in nanometers & charge in per mt^2
+#-50.00   7e14
+#\end{DeltaDoping}
+
+
+#\begin{ModulationDoping}       # This section is optional 
+#units : distances in nanometers & background in per mt^3
+#-60.0  -0.1  1.3e20
+#20   400      1.3e20
+#\end{ModulationDoping}
+
+
+\begin{InterfaceRoughness}    # This section is optional 
+
+roughness_amplitude_in_nanometer = 0.11
+roughness_correl_length_in_nanometer=13.0
+N_depletion_charge_density=1e13           # almost irrelevant for GaAs-AlGaAs, very important for SI-MOSFET
+
+\end{InterfaceRoughness}
+
+
+# \begin{ExperimentalData}
+# section to be written
+# units should match "outputunits" in  "OutputSpecifications"
+# \end{ExperimentalData}
+
+
+
+#end of input
+
+Write whatever you want here........
+
+***********************************************
+fit to W0111 data : 
+Nb=4.6e19/m3
+roughness_amplitude_in_nanometer = 0.1
+roughness_correl_length_in_nanometer=25
+
+
+
+
+=================================================================================
+
+fit to C0805292 (Stefan Schmult's sample, illumination varied, not gated)
+Nb=1.5e19, 6.5e18
+roughness_amplitude_in_nanometer = 0.082
+roughness_correl_length_in_nanometer=9.50
+DeltaDoping= -120   4.3e15
+
+********************************************************************************
+fit to C0805283 (Stefan Schmult's sample, illumination varied, not gated)
+Nb=1.2e19, 6.5e18
+roughness_amplitude_in_nanometer = 0.086
+roughness_correl_length_in_nanometer=10.00
+DeltaDoping= -60nm   7e14/cm^2
+********************************************************************************
+fit to C1011242 (Stefan Schmult's sample, undoped, 10nm GaAs Cap+ 100nm AlGaAs)
+Nb=1.4e20, 8e19
+roughness_amplitude_in_nanometer = 0.10
+roughness_correl_length_in_nanometer=13.00
+surfacecharge=1.5e15
+********************************************************************************
+fit to C1011251 (Stefan Schmult's sample, undoped, 10nm GaAs Cap+ 70nm AlGaAs)
+Nb=1.4e20, 8e19
+roughness_amplitude_in_nanometer = 0.12
+roughness_correl_length_in_nanometer=14.00
+surfacecharge=4.0e15
+********************************************************************************
+
+***********************************************
+fit to A2513 (300nm) data:
+surfacecharge=1e14 (doesn't matter)
+Nb(GaAs) = 1.2e20
+Nb(AlGaAs)=3.0e20
+roughness_amplitude_in_nanometer = 0.19   
+roughness_correl_length_in_nanometer=17.75   
+
+***********************************************
+fit to A2510 (150nm) data:
+surfacecharge=5e14 (doesn't matter)
+Nb(GaAs) = 1.2e20
+Nb(AlGaAs)=3.0e20
+roughness_amplitude_in_nanometer = 0.19   
+roughness_correl_length_in_nanometer=17.75   
+***********************************************
+fit to A2512 (70nm) data:
+surfacecharge=9e14 
+Nb(GaAs) = 1.2e20
+Nb(AlGaAs)=3.0e20
+roughness_amplitude_in_nanometer = 0.19   
+roughness_correl_length_in_nanometer=17.75   
+***********************************************
+fit to A2511 (30nm) data:
+surfacecharge=4e15 
+Nb(GaAs) = 1.2e20
+Nb(AlGaAs)=3.0e20
+roughness_amplitude_in_nanometer = 0.19   
+roughness_correl_length_in_nanometer=17.75   
+
+
+
+
+=========================================================================================
+
+
+
+
+
+***********************************************
+fit to V625 (50nm) data:
+surfacecharge=1.1e15 
+Nb(GaAs) = 7e19
+Nb(AlGaAs)=1.3e20
+roughness_amplitude_in_nanometer = 0.11   
+roughness_correl_length_in_nanometer=13   
+**********************************************
+fit to V617 (150nm) data:
+surfacecharge=5e14 
+Nb(GaAs) = 7e19
+Nb(AlGaAs)=1.3e20
+roughness_amplitude_in_nanometer = 0.11
+roughness_correl_length_in_nanometer=13  
+
+**********************************************
+fit to V627 (20nm) data:
+surfacecharge=2.8e15 
+Nb(GaAs) = 7e19
+Nb(AlGaAs)=1.3e20
+roughness_amplitude_in_nanometer = 0.11
+roughness_correl_length_in_nanometer=13
+
+***********************************************
+fit to V656 data : 100+10 nm
+surfacecharge=8e14
+Nb(GaAs) = 7e19
+Nb(AlGaAs)=1.3e20
+roughness_amplitude_in_nanometer = 0.11   
+roughness_correl_length_in_nanometer=13   
+***********************************************
+fit to V657 data : 50+10 nm                        !!!!![NEED TO REDO THE MEASUREMENTS]!!!!!!
+surfacecharge=1.5e15
+Nb(GaAs) = 3.5e19
+Nb(AlGaAs)=1.3e20
+roughness_amplitude_in_nanometer = 0.19   
+roughness_correl_length_in_nanometer=15.0   
+ 
+
